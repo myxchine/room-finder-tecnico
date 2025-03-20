@@ -134,17 +134,14 @@ export async function getroom(roomId: string): Promise<room | null> {
     return null;
   }
 }
-import { getServerAuthSession } from "@/server/auth";
-export async function newroom({ roomJson }: { roomJson: any }) {
+import { getServerAuthSession } from "../auth";
+/* TODO: export async function newroom({ roomJson }: { roomJson: any }) {
   try {
     const session = await getServerAuthSession();
 
     const room = await db
       .insert(rooms)
-      .values({
-        roomJson,
-        userId: session?.user.id,
-      })
+      .values()
       .returning();
     return {
       room: room[0],
@@ -157,7 +154,7 @@ export async function newroom({ roomJson }: { roomJson: any }) {
       status: { status: "error", message: "Failed to create new room." },
     };
   }
-}
+}*/
 
 export async function deleteroom({ room }: { room: room }) {
   try {

@@ -11,7 +11,9 @@ import {
 } from "drizzle-orm/pg-core";
 import { type AdapterAccount } from "next-auth/adapters";
 
-export const createTable = pgTableCreator((name) => `student_accomodation_${name}`); // Custom prefix create table helper function
+export const createTable = pgTableCreator(
+  (name) => `student_accomodation_${name}`
+); // Custom prefix create table helper function
 
 // Core tables
 export const users = createTable(
@@ -70,7 +72,6 @@ export const likes = createTable(
     pk: primaryKey({ columns: [table.roomId, table.userId] }),
   })
 );
-
 
 // NextAuth tables
 export const accounts = createTable(
