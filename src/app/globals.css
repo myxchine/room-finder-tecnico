@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+/* #f6f2ee */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e6e4db;
+  --foreground: #000000;
+  --header-height-mobile: 68.3px;
+  --header-height-desktop: 92px;
+  --site-width: 80rem;
+  --header-height: 68.3px;
+  --footer-height: 0px;
 }
 
 @theme inline {
@@ -10,17 +17,106 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-inter-sans: var(--font-inter-sans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground font-inter-sans text-balance;
+}
+
+p {
+  @apply text-inherit font-sans;
+}
+
+strong {
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-3xl md:text-5xl font-bold tracking-tight;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl font-bold tracking-tight;
+}
+
+h3 {
+  @apply text-xl md:text-2xl font-semibold tracking-tight;
+}
+
+button {
+  @apply cursor-pointer;
+}
+.button-black {
+  @apply bg-black text-background px-4 py-2 rounded-full border border-black hover:bg-black/80;
+}
+.button-white {
+  @apply px-4 py-2 rounded-lg border border-black hover:bg-black/20;
+}
+.pill {
+  @apply px-3 py-1 rounded-full text-xs border border-black/60 text-black/60 w-fit;
+}
+.heading1 {
+  @apply text-2xl font-bold;
+}
+.heading2 {
+  @apply text-xl font-bold;
+}
+.heading3 {
+  @apply text-lg font-bold;
+}
+.personal-workout-routine-form label {
+  @apply w-full;
+}
+
+.personal-workout-routine-form select {
+  @apply px-3 py-2  rounded-full border border-black/60 text-black/60  text-center text-xs md:text-sm  cursor-pointer hover:bg-black/5;
+}
+
+.left-to-right-gradient {
+  background: linear-gradient(
+    to right,
+    #e6e4db 0%,
+    #ffffff00 10%,
+    #ffffff00 40%,
+    #e6e4db 50%
+  );
+  background-size: 200% 100%;
+}
+
+.top-to-bottom-gradient {
+  background: linear-gradient(
+    to bottom,
+    #e6e4db 0%,
+    #ffffff00 30%,
+    #ffffff00 80%,
+    #e6e4db 100%
+  );
+  background-size: 200% 100%;
+}
+
+.top-gradient {
+  background: linear-gradient(
+    to bottom,
+    #e6e4db 0%,
+    #ffffff00 100%
+  );
+  background-size: 200% 100%;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  line-height: inherit;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
